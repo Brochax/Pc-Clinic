@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas frecuentes | Pc Clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ===== NAVBAR / BARRA DE NAVEGACIÓN SUPERIOR ===== -->
+    <nav>
+        <!-- Logo de la empresa -->
+        <div class="logo">
+            <a href="../index.html">
+            <img src="../img/pc-clinic-logo.png" alt="Logo PC Clinic">
+            </a>
+        </div>
+
+        <!-- Botón hamburguesa para menú en pantallas pequeñas -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Menú de navegación (enlaces a secciones del sitio) -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+
+    </main>
+    <!-- ===== PIE DE PÁGINA / FOOTER ===== -->
+    <footer class="footer">
+
+        <!-- Columna: información sobre la empresa -->
+        <div class="footer-col">
+            <h3>ACERCA DE PC CLINIC</h3>
+            <p>Somos una empresa especializada en armado, optimización y limpieza de computadoras.</p>
+        </div>
+
+        <!-- Columna: enlaces del sitio -->
+        <div class="footer-col">
+            <h3>MAPA DEL SITIO</h3>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="Servicio-Tecnico.html">Servicios Técnico</a></li>
+                <li><a href="Preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna: datos de contacto y redes sociales -->
+        <div class="footer-col">
+            <h3>CONTACTO</h3>
+            <p>Horario de atención:<br>Lunes a Viernes<br>10 a 18hs</p>
+
+            <!-- Íconos/redes sociales -->
+            <div class="footer-social">
+                <a href="https://w.app/pcclinic" target="_blank">
+                    <img src="../IMG/logo-whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/pc.clinic.ok/" target="_blank">
+                    <img src="../IMG/logo-ig.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@pc.clinic.ok" target="_blank">
+                    <img src="../IMG/logo-tiktok.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+
+        <!-- Logo PC Clinic en el pie de página -->
+        <div class="footer-logo">
+            <img src="../IMG/pc-clinic-logo.png" alt="Logo PC Clinic">
+        </div>
+
+    </footer>
+
+    <!-- ===== SCRIPT PARA EL BOTÓN HAMBURGUESA (MENÚ CELULAR) ===== -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

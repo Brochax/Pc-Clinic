@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Pc Clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- ===== Encabezado con navegación principal ===== -->
+    <nav>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/pc-clinic-logo.png" alt="Logo PC Clinic">
+            </a>
+        </div>
+
+        <!-- Botón menú para telefono -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Enlaces del menú -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== Botón para activar galería animada ===== -->
+    <div class="view-gallery">
+        <button>VER GALERIA</button>
+    </div>
+
+    <!-- ===== Galería de imágenes (interactiva) ===== -->
+    <ul class="image-gallery">
+        <li class="box box-1"></li>
+        <li class="box box-2"></li>
+        <li class="box box-3"></li>
+        <li class="box box-4"></li>
+        <li class="box box-5"></li>
+        <li class="box box-6"></li>
+    </ul>
+
+    <!-- ===== Vista a pantalla completa de imágenes ===== -->
+    <div id="fullscreen-view" class="fullscreen hidden">
+        <span class="nav-btn prev">&larr;</span>
+        <img id="fullscreen-img" src="" alt="Imagen ampliada">
+        <span class="nav-btn next">&rarr;</span>
+        <span class="close-btn">&times;</span>
+    </div>
+
+    <!-- ===== Pie de página con información general ===== -->
+    <footer class="footer">
+
+        <!-- Columna: sobre la empresa -->
+        <div class="footer-col">
+            <h3>ACERCA DE PC CLINIC</h3>
+            <p>Somos una empresa especializada en armado, optimización y limpieza de computadoras.</p>
+        </div>
+
+        <!-- Columna: navegación secundaria -->
+        <div class="footer-col">
+            <h3>MAPA DEL SITIO</h3>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="Servicio-Tecnico.html">Servicios Técnico</a></li>
+                <li><a href="Preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna: contacto y redes -->
+        <div class="footer-col">
+            <h3>CONTACTO</h3>
+            <p>Horario de atención:<br>Lunes a Viernes<br>10 a 18hs</p>
+
+            <!-- Íconos de redes sociales -->
+            <div class="footer-social">
+                <a href="https://w.app/pcclinic" target="_blank">
+                    <img src="../IMG/logo-whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/pc.clinic.ok/" target="_blank">
+                    <img src="../IMG/logo-ig.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@pc.clinic.ok" target="_blank">
+                    <img src="../IMG/logo-tiktok.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+
+        <!-- Logo en el pie de página -->
+        <div class="footer-logo">
+            <img src="../IMG/pc-clinic-logo.png" alt="Logo PC Clinic">
+        </div>
+    </footer>
+
+    <!-- ===== Script: menú responsive ===== -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+    <!-- ===== Script: galería interactiva con fullscreen y navegación ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Variables e imágenes
+            const button = document.querySelector('.view-gallery button');
+            const boxes = document.querySelectorAll('.box');
+            const fullscreen = document.getElementById('fullscreen-view');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            const closeBtn = document.querySelector('.close-btn');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+
+            const imageUrls = Array.from(boxes).map(box => {
+                const bgImage = window.getComputedStyle(box).backgroundImage;
+                return bgImage.slice(5, -2);
+            });
+
+            let currentIndex = 0;
+            let isAnimated = false;
+
+            // Activar animación de galería
+            button.addEventListener('click', function () {
+                isAnimated = !isAnimated;
+                boxes.forEach(box => {
+                    box.classList.toggle('animated');
+                });
+            });
+
+            // Mostrar imagen en fullscreen
+            boxes.forEach((box, index) => {
+                box.addEventListener('click', function () {
+                    if (!box.classList.contains('animated')) return;
+                    currentIndex = index;
+                    fullscreenImg.src = imageUrls[currentIndex];
+                    fullscreen.classList.remove('hidden');
+                    document.body.classList.add('no-scroll');
+                });
+            });
+
+            function showImage(index) {
+                fullscreenImg.src = imageUrls[index];
+            }
+
+            // Botones siguiente/anterior
+            nextBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % imageUrls.length;
+                showImage(currentIndex);
+            });
+
+            prevBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+                showImage(currentIndex);
+            });
+
+            function closeFullscreen() {
+                fullscreen.classList.add('hidden');
+                fullscreenImg.src = '';
+                document.body.classList.remove('no-scroll');
+            }
+
+            closeBtn.addEventListener('click', closeFullscreen);
+
+            fullscreen.addEventListener('click', function (e) {
+                if (e.target === fullscreen) {
+                    closeFullscreen();
+                }
+            });
+
+            // Soporte para teclado y swipe
+            document.addEventListener('keydown', function (e) {
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                fullscreen.addEventListener('touchstart', function (e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                fullscreen.addEventListener('touchend', function (e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+
+                function handleSwipe() {
+                    const swipeThreshold = 50;
+                    const diff = touchEndX - touchStartX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+                        } else {
+                            currentIndex = (currentIndex + 1) % imageUrls.length;
+                        }
+                        showImage(currentIndex);
+                    }
+                }
+
+                if (!fullscreen.classList.contains('hidden')) {
+                    if (e.key === 'Escape') {
+                        closeFullscreen();
+                    } else if (e.key === 'ArrowRight') {
+                        currentIndex = (currentIndex + 1) % imageUrls.length;
+                        showImage(currentIndex);
+                    } else if (e.key === 'ArrowLeft') {
+                        currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+                        showImage(currentIndex);
+                    }
+                }
+            });
+        });
+    </script>
+    
+        <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5491122483990" class="whatsapp-flotante" target="_blank"
+        aria-label="Chateá con nosotros por WhatsApp">
+        <img src="../img/whatsapp-logo-optimizado.png" alt="WhatsApp">
+        <span class="tooltip-whatsapp">¡Chateá con nosotros!</span>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Técnico | Pc Clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ===== NAVBAR / BARRA DE NAVEGACIÓN SUPERIOR ===== -->
+    <nav>
+        <!-- Logo de la empresa -->
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/pc-clinic-logo.png" alt="Logo PC Clinic">
+            </a>
+        </div>
+
+        <!-- Botón hamburguesa para menú en pantallas pequeñas -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Menú de navegación (enlaces a secciones del sitio) -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <!-- Sección Hero con imagen de fondo y texto principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TechSite Servicio Técnico</h1>
+            <p>Soluciones para todos tus problemas</p>
+            <a href="#formulario" class="boton-principal">Solicitá presupuesto sin cargo</a>
+        </div>
+    </section>
+
+    <!-- Sección de presentación con texto y formulario -->
+    <section class="presentacion">
+        <div class="info">
+            <h2>Somos un laboratorio técnico ubicado en Palermo 📍</h2>
+            <p>Especializados en reparación, armado y optimización de PC´s</p>
+            <ul>
+                <li>Presupuesto y Asesoramiento en el acto sin cargo</li>
+                <li>Reparaciones en 24hs</li>
+                <li>Atención técnica personalizada desde Almagro</li>
+            </ul>
+            <a href="https://wa.me/5491122483990" class="boton-whatsapp">Chatear con Servicio Técnico</a>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="formulario" id="formulario">
+            <form action="#" method="POST">
+                <label>Nombre</label>
+                <input type="text" name="nombre" required>
+
+                <label>E-mail</label>
+                <input type="email" name="email" required>
+
+                <label>Teléfono</label>
+                <input type="tel" name="telefono" required>
+
+                <p>Seleccioná el servicio por el cuál querés consultar:</p>
+                <label><input type="checkbox" name="servicio[]" value="limpieza"> Limpieza profunda de PC</label>
+                <label><input type="checkbox" name="servicio[]" value="Asesoramiento-armado"> Asesoramiento y armado</label>
+                <label><input type="checkbox" name="servicio[]" value="Optimizacion"> Optimizacion</label>
+
+                <button type="submit" class="boton-enviar">Consultar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== PIE DE PÁGINA / FOOTER ===== -->
+    <footer class="footer">
+
+        <!-- Columna: información sobre la empresa -->
+        <div class="footer-col">
+            <h3>ACERCA DE PC CLINIC</h3>
+            <p>Somos una empresa especializada en armado, optimización y limpieza de computadoras.</p>
+        </div>
+
+        <!-- Columna: enlaces del sitio -->
+        <div class="footer-col">
+            <h3>MAPA DEL SITIO</h3>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="Servicio-Tecnico.html">Servicios Técnico</a></li>
+                <li><a href="Preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna: datos de contacto y redes sociales -->
+        <div class="footer-col">
+            <h3>CONTACTO</h3>
+            <p>Horario de atención:<br>Lunes a Viernes<br>10 a 18hs</p>
+
+            <!-- Íconos/redes sociales -->
+            <div class="footer-social">
+                <a href="https://w.app/pcclinic" target="_blank">
+                    <img src="../IMG/logo-whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/pc.clinic.ok/" target="_blank">
+                    <img src="../IMG/logo-ig.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@pc.clinic.ok" target="_blank">
+                    <img src="../IMG/logo-tiktok.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+
+        <!-- Logo PC Clinic en el pie de página -->
+        <div class="footer-logo">
+            <img src="../IMG/pc-clinic-logo.png" alt="Logo PC Clinic">
+        </div>
+
+    </footer>
+
+    <!-- ===== SCRIPT PARA EL BOTÓN HAMBURGUESA (MENÚ CELULAR) ===== -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+        <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5491122483990" class="whatsapp-flotante" target="_blank"
+        aria-label="Chateá con nosotros por WhatsApp">
+        <img src="../img/whatsapp-logo-optimizado.png" alt="WhatsApp">
+        <span class="tooltip-whatsapp">¡Chateá con nosotros!</span>
+    </a>
+</body>
+
+</html>

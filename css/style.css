@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente Del Sitio Web */
+body {
+    font-family: "Oswald", sans-serif;
+    font-style: italic;
+}
+
+/*!------------------------- HEADER ------------------------- !*/
+
+/* ---------- Estilos del encabezado y navegación principal ---------- */
+
+/* ---------- NAVBAR GENERAL ---------- */
+nav {
+    background-color: rgb(38, 38, 38);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+/* ---------- Logo dentro del nav ---------- */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 70px;
+    display: block;
+    margin-right: 10px;
+}
+
+/* ---------- Enlaces de navegación ---------- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: inline-block;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- HAMBURGER MENU ---------- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/**------------------------- MAIN INDEX ------------------------- **/
+
+/* ---------- Estilos generales del contenido principal ---------- */
+
+main {
+    background-color: rgb(23, 23, 23);
+    color: rgb(248, 250, 252);
+}
+
+/* ---------- Contenedor de bienvenida ---------- */
+
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+.bienvenida {
+    padding-top: 200px !important;
+    padding-bottom: 20px !important;
+    margin-top: 0 !important;
+
+}
+
+/* ---------- Sección con imagen y superposición oscura ---------- */
+
+.fondo-vanta-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#vanta-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.fondo-vanta-wrapper .contenido,
+.fondo-vanta-wrapper .carousel {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Título y descripción principal ---------- */
+
+.contenido h1 {
+    font-size: clamp(2rem, 5vw, 60px);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0 0 10px #000000,
+        0 0 20px #000000;
+}
+
+.contenido p {
+    font-size: clamp(1rem, 2.5vw, 30px);
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0 0 10px #000000,
+        0 0 20px #000000;
+}
+
+/* ---------- Botones principales ---------- */
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.boton {
+    background-color: #ff3300;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #cc2900;
+}
+
+/* Altura mínima y posición relativa del carrusel */
+#carrusel-proyectos {
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* Estilos para las imágenes del carrusel */
+#carrusel-proyectos img {
+    max-height: 80vh;
+    object-fit: contain;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* ---------- Sección con fondo gráfico de certificados ---------- */
+
+.certificados {
+    background-image: url(../img/armado-pc-fondo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+/* ---------- Título de la sección "Certificados" ---------- */
+
+.certificados h2 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0 0 10px #000000,
+        0 0 20px #000000;
+    margin-bottom: 30px;
+}
+
+/* ---------- Contenedor general de las tarjetas de certificados ---------- */
+
+.certificados {
+    padding: 40px 20px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0 0 10px #000000,
+        0 0 20px #000000;
+}
+
+/* ---------- Layout flexible de las tarjetas ---------- */
+
+.certificados>div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ---------- Tarjeta individual de certificado ---------- */
+
+.certificados>div>div {
+    border: 5px solid rgb(38, 38, 38);
+    background-color: rgb(38, 38, 38);
+    padding: 10px;
+    max-width: 520px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificados>div>div:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* ---------- Imágenes dentro de las tarjetas ---------- */
+
+.certificados img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+/* ---------- Descripción corta bajo la imagen ---------- */
+
+.certificados p {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Estilo general del botón flotante de WhatsApp */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-flotante img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4)
+}
+
+/* Estilo del tooltip */
+.tooltip-whatsapp {
+    visibility: hidden;
+    background-color: #25D366;
+    color: white;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar tooltip al hacer hover */
+.whatsapp-flotante:hover .tooltip-whatsapp {
+    visibility: visible;
+    opacity: 1;
+}
+
+/**------------------------- MAIN PROYECTOS ------------------------- **/
+/* ===========================
+    ESTILOS - Página Proyectos
+   =========================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(28, 28, 28);
+    font-family: sans-serif;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ---------- Galería de imágenes ---------- */
+.image-gallery {
+    list-style: none;
+    padding: 2rem 1rem;
+    margin: auto;
+    perspective: 3000px;
+    max-width: 1200px;
+    margin-bottom: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-height: none;
+    overflow: visible;
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+}
+
+/* ---------- Estilo de cada caja ---------- */
+.box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    transform: translateY(10vh) skew(60deg, -15deg) rotateX(40deg);
+    box-shadow: -5px 5px 30px 1px rgba(255, 255, 255, 0.3);
+    transition: all 300ms ease;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* ---------- Pantalla completa ---------- */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------- Fondos individuales ---------- */
+.box-1 {
+    background-image: url("../img/pc-proyecto-1.jpeg");
+}
+
+.box-2 {
+    background-image: url("../img/pc-proyecto-2.jpeg");
+}
+
+.box-3 {
+    background-image: url("../img/pc-proyecto-3.jpeg");
+}
+
+.box-4 {
+    background-image: url("img/foto4.jpg");
+}
+
+.box-5 {
+    background-image: url("img/foto5.jpg");
+}
+
+.box-6 {
+    background-image: url("img/foto6.jpg");
+}
+
+/* ---------- Animación al hacer clic ---------- */
+.animated {
+    transform: translateY(0) skew(0, 0) rotateX(0deg);
+    margin: 0;
+}
+
+/* ---------- Botón ver galería ---------- */
+.view-gallery {
+    text-align: center;
+    margin: 5vh 0;
+}
+
+.view-gallery button {
+    background: #e63946;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 200ms ease;
+    border-radius: 8px;
+}
+
+.view-gallery button:hover {
+    background: rgba(230, 57, 70, 0.8);
+}
+
+/* ---------- Navegación lateral ---------- */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.nav-btn.prev {
+    left: 20px;
+}
+
+.nav-btn.next {
+    right: 20px;
+}
+
+/*?------------------------- FOOTER -------------------------?*/
+
+/* ---------- Estructura general del pie de página ---------- */
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    background-color: rgb(38, 38, 38);
+    color: white;
+    padding: 40px;
+}
+
+/* ---------- Títulos de las columnas del footer ---------- */
+
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ---------- Párrafos de texto en el footer ---------- */
+
+.footer-col p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ---------- Listas de enlaces ---------- */
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* ---------- Iconos redes sociales ---------- */
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    margin-top: 10px;
+}
+
+/* ---------- Logo en el footer ---------- */
+
+.footer-logo img {
+    max-width: 300px;
+    height: auto;
+}
+
+/*!------------------------- RESPONSIVE -------------------------!*/
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
