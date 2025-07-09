@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
@@ -37,48 +38,100 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
-    <!-- Sección Hero con imagen de fondo y texto principal -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>TechSite Servicio Técnico</h1>
-            <p>Soluciones para todos tus problemas</p>
-            <a href="#formulario" class="boton-principal">Solicitá presupuesto sin cargo</a>
+    <!-- SECCIÓN SERVICIO TÉCNICO -->
+    <section class="servicio-seccion">
+        <h2 class="titulo-servicio" data-aos="fade-up">SERVICIO TÉCNICO</h2>
+        <p class="descripcion-servicio" data-aos="fade-up" data-aos-delay="100">
+            Somos un laboratorio ubicado en Almagro 📍. Especializados en reparación y optimización de PC´s.
+        </p>
+    </section>
+    <section>
+        <div class="form-grid-container">
+            <!-- INFO -->
+            <div class="form-info" data-aos="fade-right">
+                <ul>
+                    <li>Presupuesto en el acto sin cargo</li>
+                    <li>Reparaciones en 24hs</li>
+                    <li>Oficina de primer nivel en Almagro</li>
+                </ul>
+                <button class="btn-red" onclick="abrirWhatsapp()">Chatear con Servicio Técnico</button>
+            </div>
+
+            <!-- FORM -->
+            <form class="form-modern" onsubmit="return enviarFormulario(event)" data-aos="fade-left">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Teléfono</label>
+                    <input type="tel" required>
+                </div>
+
+                <div class="checkboxes">
+                    <label><input type="checkbox"> Optimización</label>
+                    <label><input type="checkbox"> Asesoramiento–Armado completo</label>
+                    <label><input type="checkbox"> Mantenimiento</label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Consultar</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M15.854 7.646a.5.5 0 0 0-.708 0L11 11.793V8.5a.5.5 0 0 0-1 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-3.293l4.147-4.146a.5.5 0 0 0 0-.708z" />
+                        <path
+                            d="M1 2a1 1 0 0 0-1 1v9a2 2 0 0 0 2 2h8.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v4.5a.5.5 0 0 0 1 0V3a2 2 0 0 0-2-2H2z" />
+                    </svg>
+                </button>
+            </form>
         </div>
     </section>
 
-    <!-- Sección de presentación con texto y formulario -->
-    <section class="presentacion">
-        <div class="info">
-            <h2>Somos un laboratorio técnico ubicado en Palermo 📍</h2>
-            <p>Especializados en reparación, armado y optimización de PC´s</p>
-            <ul>
-                <li>Presupuesto y Asesoramiento en el acto sin cargo</li>
-                <li>Reparaciones en 24hs</li>
-                <li>Atención técnica personalizada desde Almagro</li>
-            </ul>
-            <a href="https://wa.me/5491122483990" class="boton-whatsapp">Chatear con Servicio Técnico</a>
+    <section class="catalog" id="catalogo-servicios" data-aos="fade-up">
+        <h2>Soluciones que ofrecemos</h2>
+        <p class="catalog-desc">Servicios personalizados con resultados garantizados.</p>
+
+        <div class="catalog-grid">
+            <div class="catalog-card" data-aos="zoom-in" data-aos-delay="100" data-servicio="mantenimiento">
+                <div class="icon-container">
+                    <img src="../img/mantenimiento.jpg" alt="Mantenimiento">
+                </div>
+                <h3>Mantenimiento</h3>
+            </div>
+
+            <div class="catalog-card" data-aos="zoom-in" data-aos-delay="100" data-servicio="armado">
+                <div class="icon-container">
+                    <img src="../img/armado.jpg" alt="Armado PC">
+                </div>
+                <h3>Asesoramiento y Armado de PC</h3>
+            </div>
+
+            <div class="catalog-card" data-aos="zoom-in" data-aos-delay="100" data-servicio="optimizacion">
+                <div class="icon-container">
+                    <img src="../img/optimizacion.jpg" alt="optimización">
+                </div>
+                <h3>Optimización</h3>
+            </div>
         </div>
 
-        <!-- Formulario de contacto -->
-        <div class="formulario" id="formulario">
-            <form action="#" method="POST">
-                <label>Nombre</label>
-                <input type="text" name="nombre" required>
-
-                <label>E-mail</label>
-                <input type="email" name="email" required>
-
-                <label>Teléfono</label>
-                <input type="tel" name="telefono" required>
-
-                <p>Seleccioná el servicio por el cuál querés consultar:</p>
-                <label><input type="checkbox" name="servicio[]" value="limpieza"> Limpieza profunda de PC</label>
-                <label><input type="checkbox" name="servicio[]" value="Asesoramiento-armado"> Asesoramiento y armado</label>
-                <label><input type="checkbox" name="servicio[]" value="Optimizacion"> Optimizacion</label>
-
-                <button type="submit" class="boton-enviar">Consultar</button>
-            </form>
+        <!-- MODAL -->
+        <div id="modal-servicio" class="modal hidden">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+            </div>
         </div>
+
+        <a href="#" class="whatsapp-btn" onclick="abrirWhatsapp()">Obtené tu presupuesto sin cargo</a>
     </section>
 
     <!-- ===== PIE DE PÁGINA / FOOTER ===== -->
@@ -135,8 +188,68 @@
             navLinks.classList.toggle('active');
         }
     </script>
+    <script>
+        function abrirWhatsapp() {
+            const mensaje = encodeURIComponent("Hola, quiero consultar por servicio técnico");
+            const numero = "5491122483990"; // reemplazá con el tuyo
+            window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
+        }
 
-        <!-- Botón flotante de WhatsApp -->
+        function enviarFormulario(e) {
+            e.preventDefault();
+            alert("Gracias por tu consulta. Te responderemos pronto.");
+            return false;
+        }
+    </script>
+    <script>
+        const modal = document.getElementById('modal-servicio');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const closeModal = document.querySelector('.modal-close');
+
+        const contenidoServicios = {
+            mantenimiento: {
+                titulo: "Mantenimiento",
+                desc: "Incluye revisión general, actualizaciones de sistema, y diagnóstico preventivo para que tu equipo funcione al 100%."
+            },
+            armado: {
+                titulo: "Asesoramiento y Armado de PC",
+                desc: "Te guiamos en el armado ideal para tus necesidades: gaming, edición, oficina o estudios. ¡Elegí componentes con ayuda profesional!"
+            },
+            optimizacion: {
+                titulo: "Optimización de Rendimiento",
+                desc: "Mejoramos la velocidad de arranque, carga de programas y eficiencia general del sistema. Configuramos tu PC para que funcione de forma fluida, rápida y sin interrupciones innecesarias."
+            }
+        };
+
+        document.querySelectorAll('.catalog-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const tipo = card.dataset.servicio;
+                const info = contenidoServicios[tipo];
+                modalTitle.textContent = info.titulo;
+                modalDesc.textContent = info.desc;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5491122483990" class="whatsapp-flotante" target="_blank"
         aria-label="Chateá con nosotros por WhatsApp">
         <img src="../img/whatsapp-logo-optimizado.png" alt="WhatsApp">

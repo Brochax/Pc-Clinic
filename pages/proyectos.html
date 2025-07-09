@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos | Pc Clinic</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="body-proyectos">
     <!-- ===== Encabezado con navegación principal ===== -->
     <nav>
         <!-- Logo -->
@@ -59,7 +60,7 @@
         <span class="close-btn">&times;</span>
     </div>
 
-    <!-- ===== Pie de página con información general ===== -->
+    <!-- ===== Footer con información general ===== -->
     <footer class="footer">
 
         <!-- Columna: sobre la empresa -->
@@ -225,8 +226,15 @@
             });
         });
     </script>
-    
-        <!-- Botón flotante de WhatsApp -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5491122483990" class="whatsapp-flotante" target="_blank"
         aria-label="Chateá con nosotros por WhatsApp">
         <img src="../img/whatsapp-logo-optimizado.png" alt="WhatsApp">

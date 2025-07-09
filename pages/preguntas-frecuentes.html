@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas frecuentes | Pc Clinic</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+
+<body class="body-faq">
     <!-- ===== NAVBAR / BARRA DE NAVEGACIÓN SUPERIOR ===== -->
     <nav>
         <!-- Logo de la empresa -->
         <div class="logo">
             <a href="../index.html">
-            <img src="../img/pc-clinic-logo.png" alt="Logo PC Clinic">
+                <img src="../img/pc-clinic-logo.png" alt="Logo PC Clinic">
             </a>
         </div>
 
@@ -22,7 +25,7 @@
             <div></div>
             <div></div>
         </div>
-        
+
         <!-- Menú de navegación (enlaces a secciones del sitio) -->
         <ul class="nav-links" id="navLinks">
             <li><a href="../index.html">Inicio</a></li>
@@ -33,7 +36,47 @@
         </ul>
     </nav>
     <main>
+        <section class="faq-section" id="faq">
+            <h2 class="faq-title" data-aos="fade-up">Preguntas Frecuentes</h2>
+            <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">¿Cuánto tarda la reparación de mi equipo?</div>
+                    <div class="faq-answer">La mayoría de las reparaciones se completan en menos de 24 horas. Te
+                        notificamos en cuanto esté lista.</div>
+                </div>
 
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">¿Puedo llevar mi PC sin turno previo?</div>
+                    <div class="faq-answer">Sí, podés venir directamente a nuestro laboratorio en Almagro en el
+                        horario
+                        de atención.</div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">¿Qué incluye el servicio de mantenimiento?</div>
+                    <div class="faq-answer">Incluye limpieza interna, revisión de hardware, testeo de componentes y
+                        mejoras de software.</div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question">¿Ofrecen garantía en las reparaciones?</div>
+                    <div class="faq-answer">Sí, todas nuestras reparaciones tienen garantía de 30 días por
+                        funcionamiento del servicio realizado.</div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-question">¿Hacen presupuestos sin cargo?</div>
+                    <div class="faq-answer">Claro, realizamos diagnóstico y presupuesto totalmente sin cargo en el
+                        momento.</div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="faq-question">¿Pueden ayudarme a armar una PC personalizada?</div>
+                    <div class="faq-answer">Sí, te asesoramos según tus necesidades de gaming, edición o uso
+                        profesional. Te guiamos en cada componente.</div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- ===== PIE DE PÁGINA / FOOTER ===== -->
     <footer class="footer">
@@ -89,5 +132,28 @@
             navLinks.classList.toggle('active');
         }
     </script>
+    <script>
+        document.querySelectorAll(".faq-item").forEach(item => {
+            item.querySelector(".faq-question").addEventListener("click", () => {
+                document.querySelectorAll(".faq-item").forEach(i => {
+                    if (i !== item) i.classList.remove("active");
+                });
+                item.classList.toggle("active");
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5491122483990" class="whatsapp-flotante" target="_blank"
+        aria-label="Chateá con nosotros por WhatsApp">
+        <img src="../img/whatsapp-logo-optimizado.png" alt="WhatsApp">
+        <span class="tooltip-whatsapp">¡Chateá con nosotros!</span>
 </body>
+
 </html>
