@@ -431,15 +431,15 @@ body.no-scroll {
 }
 
 .box-4 {
-    background-image: url("../img/pc-proyecto-4.gif");
+    background-image: url("../img/pc-proyecto-4.jpg");
 }
 
 .box-5 {
-    background-image: url("img/foto5.jpg");
+    background-image: url("../img/pc-proyecto-5.jpg");
 }
 
 .box-6 {
-    background-image: url("img/foto6.jpg");
+    background-image: url("../img/pc-proyecto-6.jpg");
 }
 
 /* ---------- Animación al hacer clic ---------- */
